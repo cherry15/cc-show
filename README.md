@@ -1,16 +1,16 @@
-# Getting Started with Lazy Hamburger
+# Getting Started with CC Show
 
-This is a lazy loading hamburger menu and was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). It is using React v18 and Typescript.
+This is a demo app and was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). It is using React v18 and Typescript.
 
 ## Running the App
 
 In the command prompt or terminal clone the app
 
-#### `git clone https://github.com/cherry15/lazy-hamburger.git`
+#### `git clone https://github.com/cherry15/cc-show.git`
 
 CD into the folder
 
-#### `cd lazy-hamburger`
+#### `cd cc-show`
 
 And install dependencies
 
