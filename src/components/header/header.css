@@ -1,0 +1,127 @@
+@import url(https://fonts.googleapis.com/css?family=Raleway);
+
+.menuButton {
+  border: none;
+  color: var(--white);
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  width: 3rem;
+  height: 3rem;
+  background: url(./menu.svg) transparent no-repeat;
+}
+
+.menuButton.open {
+  background: url(./close.svg) transparent no-repeat;
+}
+
+html, body {
+  margin: 0;
+  height: 100%;
+}
+
+* {
+  font-family: "Raleway";
+  box-sizing: border-box;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background-color: green;
+  color: yellowgreen;
+  height: 50px;
+  padding: 1rem .5rem;
+  position: relative;
+}
+
+.menu {
+  display: none;
+  flex-direction: column;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 50px;
+  left: 0;
+  background: blueviolet;
+  width: 100%;
+  gap: 0;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu.open {
+  display: flex;
+}
+
+.menu > li {
+  display: flex;
+  border-bottom: 1px solid yellowgreen;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  height: 50px;
+}
+
+.menu > li > a {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: yellowgreen;
+}
+
+.menu > li a:hover,
+.menu > li a:active,
+.menu > li a.active {
+  background-color: #ab70e2;
+}
+
+.header > a.logo {
+  padding: 0;
+  display: flex;
+  height: 50px;
+  width: 50px;
+  background: url(./logo.svg) no-repeat transparent;
+}
+
+@media (min-width: 700px) {
+  .menuButton {
+    display: none;
+  }
+
+  .menu {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    top: 0;
+    background: none;
+    width: auto;
+    gap: 0 1rem;
+    justify-content: flex-start;
+  }
+
+  .menu > li {
+    border-bottom: none;
+  }
+
+  .menu > li a {
+    padding: 0 .5rem;
+  }
+
+  .menu > li a:hover,
+  .menu > li a:active,
+  .menu > li a.active,
+  .header > a.logo:hover,
+  .header > a.logo:active,
+  .header > a.logo.active {
+    background-color: #0a640a;
+  }
+}
