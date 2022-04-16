@@ -1,32 +1,32 @@
 import { rest } from 'msw'
 import {
-  IEmployee,
+  ICountry,
   baseUrl,
-  employeesUrl,
-} from '../components/employee/employee-api'
-import { EmployeesData } from './employee-data'
+  countriesUrl,
+} from '../components/countries/countries-api'
+import { CountriesData } from './countries-data'
 import { v4 as uuidv4 } from 'uuid'
 
-const url = `${baseUrl}${employeesUrl}`
+const url = `${baseUrl}${countriesUrl}`
 
 export const handlers = [
-  rest.get<IEmployee[]>(url, (req, res, ctx) => {
-    return res(ctx.status(200), ctx.json(EmployeesData))
+  rest.get<ICountry[]>(url, (req, res, ctx) => {
+    return res(ctx.status(200), ctx.json(CountriesData))
   }),
 
-  rest.get<IEmployee>(`${url}/:employeeId`, (req, res, ctx) => {
-    const { employeeId } = req.params
-    if (employeeId) {
-      const employeeIndex = EmployeesData.findIndex(
-        (employee) => employee.id === employeeId.toString()
+  rest.get<ICountry>(`${url}/:id`, (req, res, ctx) => {
+    const { id } = req.params
+    if (id) {
+      const countryIndex = CountriesData.findIndex(
+        (country) => country.id === id.toString()
       )
-      if (employeeIndex !== -1) {
-        return res(ctx.json(EmployeesData[employeeIndex]), ctx.status(200))
+      if (countryIndex !== -1) {
+        return res(ctx.json(CountriesData[countryIndex]), ctx.status(200))
       } else {
         return res(
           ctx.status(404),
           ctx.json({
-            errorMessage: 'Employee not found',
+            errorMessage: 'Country not found',
           }),
         )
       }
@@ -39,14 +39,14 @@ export const handlers = [
     )
   }),
 
-  rest.post<IEmployee>(`${url}`, (req, res, ctx) => {
+  rest.post<ICountry>(`${url}`, (req, res, ctx) => {
     if (req.body?.name) {
-      const employee: IEmployee = {
+      const country: ICountry = {
         id: uuidv4(),
         ...req.body,
       }
-      EmployeesData.push(employee)
-      return res(ctx.status(201), ctx.json(employee))
+      CountriesData.push(country)
+      return res(ctx.status(201), ctx.json(country))
     }
     return res(
       ctx.status(400),
@@ -56,20 +56,20 @@ export const handlers = [
     )
   }),
 
-  rest.delete(`${url}/:employeeId`, (req, res, ctx) => {
-    const { employeeId } = req.params
-    if (employeeId) {
-      const employeeIndex = EmployeesData.findIndex(
-        (employee) => employee.id === employeeId.toString()
+  rest.delete(`${url}/:id`, (req, res, ctx) => {
+    const { id } = req.params
+    if (id) {
+      const countryIndex = CountriesData.findIndex(
+        (country) => country.id === id.toString()
       )
-      if (employeeIndex !== -1) {
-        EmployeesData.splice(employeeIndex, 1)
+      if (countryIndex !== -1) {
+        CountriesData.splice(countryIndex, 1)
         return res(ctx.status(200))
       } else {
         return res(
           ctx.status(400),
           ctx.json({
-            errorMessage: 'Employee not found',
+            errorMessage: 'Country not found',
           }),
         )
       }
@@ -82,20 +82,20 @@ export const handlers = [
     )
   }),
 
-  rest.put<IEmployee>(`${url}/:employeeId`, (req, res, ctx) => {
-    const { employeeId } = req.params
-    if (employeeId) {
-      const employeeIndex = EmployeesData.findIndex(
-        (employee) => employee.id === employeeId.toString()
+  rest.put<ICountry>(`${url}/:id`, (req, res, ctx) => {
+    const { id } = req.params
+    if (id) {
+      const countryIndex = CountriesData.findIndex(
+        (country) => country.id === id.toString()
       )
-      if (employeeIndex !== -1) {
-        EmployeesData[employeeIndex] = { ...req.body }
+      if (countryIndex !== -1) {
+        CountriesData[countryIndex] = { ...req.body }
         return res(ctx.status(200))
       } else {
         return res(
           ctx.status(400),
           ctx.json({
-            errorMessage: 'Employee not found',
+            errorMessage: 'Country not found',
           }),
         )
       }
@@ -109,7 +109,7 @@ export const handlers = [
   }),
 ]
 
-export const getEmloyeesException = rest.get<IEmployee[]>(
+export const getCountriesException = rest.get<ICountry[]>(
   url,
   async (req, res, ctx) =>
     res(ctx.status(500), ctx.json({ errorMessage: 'Deliberately broken request' }))

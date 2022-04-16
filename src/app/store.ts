@@ -3,10 +3,10 @@ import {
   configureStore,
   PreloadedState,
 } from '@reduxjs/toolkit'
-import { employeesApi } from '../components/employee/employee-api'
+import { countriesApi } from '../components/countries/countries-api'
 
 const rootReducer = combineReducers({
-  [employeesApi.reducerPath]: employeesApi.reducer,
+  [countriesApi.reducerPath]: countriesApi.reducer,
 })
 
 export const setupStore = (preloadedState?: PreloadedState<RootState>) => {
@@ -14,7 +14,7 @@ export const setupStore = (preloadedState?: PreloadedState<RootState>) => {
     reducer: rootReducer,
     middleware: (getDefaultMiddleware) =>
       // adding the api middleware enables caching, invalidation, polling and other features of `rtk-query`
-      getDefaultMiddleware().concat(employeesApi.middleware),
+      getDefaultMiddleware().concat(countriesApi.middleware),
     preloadedState,
   })
 }

@@ -1,10 +1,10 @@
 import React from 'react'
-import { IEmployee } from '../employee/employee-api'
+import { ICountry } from '../countries/countries-api'
 
 export interface IQueryResultProps {
   isLoading: boolean
   error: any
-  data: IEmployee
+  data: ICountry
   children: React.ReactNode
 }
 

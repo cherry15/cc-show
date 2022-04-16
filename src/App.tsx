@@ -7,7 +7,7 @@ const About = React.lazy(() => import('./pages/about'))
 const Cats = React.lazy(() => import('./pages/cats'))
 const Dogs = React.lazy(() => import('./pages/dogs'))
 const Contact = React.lazy(() => import('./pages/contact'))
-const Employee = React.lazy(() => import('./pages/employee'))
+const Country = React.lazy(() => import('./pages/country'))
 
 const App = () => {
   return (
@@ -47,10 +47,10 @@ const App = () => {
           }
         />
         <Route
-          path="employee/:id"
+          path="countries/:id"
           element={
             <React.Suspense fallback={<>Loading...</>}>
-              <Employee />
+              <Country />
             </React.Suspense>
           }
         />
