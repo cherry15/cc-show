@@ -10,6 +10,9 @@ const Dogs = React.lazy(() => import('./pages/dogs'))
 const Contact = React.lazy(() => import('./pages/contact'))
 const Country = React.lazy(() => import('./pages/country'))
 const CountriesHome = React.lazy(() => import('./pages/countries-home'))
+const AdminHome = React.lazy(() => import('./pages/admin-home'))
+const Admin = React.lazy(() => import('./pages/admin'))
+const AdminItem = React.lazy(() => import('./pages/admin-item'))
 
 const App = () => {
   return (
@@ -61,6 +64,23 @@ const App = () => {
             index element={
               <React.Suspense fallback={<>Loading...</>}>
                 <CountriesHome />
+              </React.Suspense>
+            }
+          />
+        </Route>
+        <Route path="admin" element={<Admin />}>
+        <Route
+            path=":id"
+            element={
+              <React.Suspense fallback={<>Loading...</>}>
+                <AdminItem />
+              </React.Suspense>
+            }
+          />
+          <Route
+            index element={
+              <React.Suspense fallback={<>Loading...</>}>
+                <AdminHome />
               </React.Suspense>
             }
           />

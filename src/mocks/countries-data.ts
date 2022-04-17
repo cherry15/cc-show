@@ -17,12 +17,12 @@ export const CountriesData: ICountry[] = [
     id: 'brazil',
     name: 'Brazil',
     imageUrl: 'brazil.jpg',
-    description: `Suspendisse potenti. 
+    description: `Suspendisse potenti, ac porta massa lacinia in. 
     Donec consequat libero turpis, ac porta massa lacinia in. Integer vitae iaculis massa. 
     Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. 
     Donec sagittis nisi quam, id efficitur nisl euismod ut`,
     latLong: [1,1],
-    summary: 'Suspendisse potenti.'
+    summary: 'Suspendisse potenti, ac porta massa lacinia in conubia.'
   },
   {
     id: 'canada',

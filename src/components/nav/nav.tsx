@@ -47,6 +47,13 @@ const Nav = () => {
           Countries
         </NavLink>
         <NavLink
+          to={'/admin'}
+          className={({ isActive }) => (isActive ? 'active' : '')}
+          onClick={hideNav}
+        >
+          Admin
+        </NavLink>
+        <NavLink
           to={'/dogs'}
           className={({ isActive }) => (isActive ? 'active' : '')}
           onClick={hideNav}

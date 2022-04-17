@@ -1,5 +1,5 @@
 import React from 'react'
-import CustomButton from '../custom-button/custom-button'
+import { NavLink } from 'react-router-dom'
 import { ICountry } from './countries-api'
 import styles from './main-feature.module.css'
 
@@ -8,12 +8,7 @@ export interface IMainFeatureProps {
 }
 
 const MainFeature = ({ country }: IMainFeatureProps) => {
-  const { name, imageUrl, summary } = country
-
-  const openFeature = (event: React.MouseEvent<HTMLInputElement>): void => {
-    event.preventDefault()
-    console.log('open')
-  }
+  const { name, imageUrl, summary, id } = country
 
   return (
     <div className={styles.mainFeatureContainer}>
@@ -38,11 +33,10 @@ const MainFeature = ({ country }: IMainFeatureProps) => {
         <div className={styles.mainInfo}>
           <h1 className={styles.title}>{name}</h1>
           <h3 className={styles.summary}>{summary}</h3>
-          <CustomButton
-            type="button"
-            value="Find out more"
-            onClick={openFeature}
-          />
+          <NavLink
+          to={`/countries/${id}`}
+          className={styles.link}
+        >Find out more</NavLink>
         </div>
       </div>
       <div className={styles.mainAsideContainer}>

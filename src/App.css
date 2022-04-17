@@ -8,10 +8,6 @@
   justify-content: center;
   height: 100%;
   flex-direction: column;
+  max-width: 66.875rem;
 }
 
-@media (min-width: 800px) {
-  .app {
-    width: 71.75rem;
-  }
-}

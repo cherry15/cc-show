@@ -11,7 +11,7 @@ const CountryDetail = ({ country }: ICountryDetailProps) => {
 
   return (
     <div className={styles.countryDetail}>
-      <h1>{name}</h1>
+      <h1 className={styles.title}>{name}</h1>
       <picture>
         <source
           media="(max-width: 799px)"

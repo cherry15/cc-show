@@ -1,11 +1,5 @@
-.countriesHome {
-  display: flex;
-  flex-direction: column;
+.countriesHome:first-child {
+  display: none;
 }
 
-.countriesHomeContainer {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
 

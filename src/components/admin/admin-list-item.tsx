@@ -1,18 +1,18 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
-import { ICountry } from './countries-api'
-import styles from './sub-feature.module.css'
+import { ICountry } from '../countries/countries-api'
+import styles from './admin-list-item.module.css'
 
-export interface ISubFeatureProps {
+export interface IAdminListItemProps {
   country: ICountry
 }
 
-const SubFeature = ({ country }: ISubFeatureProps) => {
+const AdminListItem = ({ country }: IAdminListItemProps) => {
   const { name, summary, imageUrl, id } = country
 
   return (
-    <div className={styles.subFeatureContainer}>
-      <div className={styles.subFeatureHeader}>
+    <div className={styles.adminItemContainer}>
+      <div className={styles.adminItemHeader}>
         <h3>{name}</h3>
         <img
           src={`/images/100/${imageUrl}`}
@@ -29,4 +29,4 @@ const SubFeature = ({ country }: ISubFeatureProps) => {
   )
 }
 
-export default SubFeature
+export default AdminListItem
