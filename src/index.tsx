@@ -7,6 +7,7 @@ import Header from './components/header/header'
 import { createRoot } from 'react-dom/client'
 import { Provider } from 'react-redux'
 import { setupStore } from './app/store'
+import Footer from './components/footer/footer'
 
 if (process.env.NODE_ENV === 'development') {
   const { worker } = require('./mocks/browser')
@@ -22,6 +23,7 @@ root.render(
     <BrowserRouter>
       <Header />
       <App />
+      <Footer />
     </BrowserRouter>
     </Provider>
   </React.StrictMode>

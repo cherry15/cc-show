@@ -15,10 +15,18 @@ html {
 body {
   font-family: var(--font);
   color: var(--fontColor);
+  background-color: var(--bgColour);
   margin: 0;
   padding: 0;
   height: 100%;
   font-size: 1rem;
+}
+
+#root {
+  min-height: 100%;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  position: relative;
 }
 
 .responsive-image {

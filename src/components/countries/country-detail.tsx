@@ -29,8 +29,8 @@ const CountryDetail = ({ country }: ICountryDetailProps) => {
           className="responsive-image"
         />
       </picture>
-      <p>{summary}</p>
-      <p>{description}</p>
+      <h3 className={styles.summary}>{summary}</h3>
+      <p className={styles.description}>{description}</p>
     </div>
   )
 }

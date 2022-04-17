@@ -8,11 +8,9 @@ const Country = () => {
   let params = useParams()
   const { data, error, isLoading } = useCountryQuery(params.id)
   return (
-    <div>
-      <QueryResult error={error} isLoading={isLoading} data={data}>
-        <CountryDetail country={data} />
-      </QueryResult>
-    </div>
+    <QueryResult error={error} isLoading={isLoading} data={data}>
+      <CountryDetail country={data} />
+    </QueryResult>
   )
 }
 

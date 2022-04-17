@@ -25,10 +25,10 @@ describe('App navigation', () => {
     await screen.findByRole('heading', { name: /about/i })
   })
 
-  it('clicking on the cats link should go to the cats page', async () => {
-    const link = screen.getByRole('link', { name: "Cats" })
+  it('clicking on the countries link should go to the countries page', async () => {
+    const link = screen.getByRole('link', { name: "Countries" })
     fireEvent.click(link)
-    await screen.findByRole('heading', { name: /cats/i })
+    await screen.findByRole('heading', { name: /countries/i })
   })
 
   it('clicking on the dogs link should go to the dogs page', async () => {

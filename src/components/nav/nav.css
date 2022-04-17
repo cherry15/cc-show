@@ -12,18 +12,6 @@
   background: url(./close.svg) transparent no-repeat;
 }
 
-.header {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  background-color: var(--headerBgColour);
-  color: var(--headerFontColour);
-  height: 50px;
-  padding: 1rem .5rem;
-  position: relative;
-}
-
 .nav {
   display: none;
   flex-direction: column;
@@ -62,7 +50,7 @@
   background-color: var(--navActiveBgColour);
 }
 
-.header > a.logo {
+a.logo {
   padding: 0;
   display: flex;
   height: 50px;
@@ -94,9 +82,9 @@
   .nav > a:hover,
   .nav > a:active,
   .nav > a.active,
-  .header > a.logo:hover,
-  .header > a.logo:active,
-  .header > a.logo.active {
+  a.logo:hover,
+  a.logo:active,
+  a.logo.active {
     background-color: var(--navDesktopActiveBgColour);
   }
 }

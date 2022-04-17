@@ -1,0 +1,12 @@
+@import '../../styles/variables.css';
+
+footer {
+  display: flex;
+  height: 8rem;
+  background-color: var(--footerBgColour);
+  width: 100%;
+  overflow: hidden;
+  padding: .8rem 1.4rem;
+  color: var(--footerFontColour);
+  justify-content: right;
+}
