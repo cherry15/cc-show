@@ -1,0 +1,22 @@
+:root {
+  --font: 'Raleway', sans-serif;
+  --fontColor: darkSlateGray;
+  --bgColour: white;
+
+  --headerBgColour: green;
+  --headerFontColour: yellowgreen;
+
+  --footerBgColour: #00b9ff;
+  --footerFontColour: white;
+
+  --navBgColour: blueviolet;
+  --navFontColour: yellowgreen;
+  --navActiveBgColour: #ab70e2;
+  --navDesktopActiveBgColour: #0a640a;
+ 
+  --lightGrey: #e1e5ea;
+  --grey: #dddddd;
+
+  --errorBgColor: #f8d7da;
+  --errorFontColor: #711c24;
+}

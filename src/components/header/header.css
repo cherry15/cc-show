@@ -1,8 +1,5 @@
-@import url(https://fonts.googleapis.com/css?family=Raleway);
-
-.menuButton {
+.navButton {
   border: none;
-  color: var(--white);
   cursor: pointer;
   padding: 0;
   display: flex;
@@ -11,18 +8,8 @@
   background: url(./menu.svg) transparent no-repeat;
 }
 
-.menuButton.open {
+.navButton.open {
   background: url(./close.svg) transparent no-repeat;
-}
-
-html, body {
-  margin: 0;
-  height: 100%;
-}
-
-* {
-  font-family: "Raleway";
-  box-sizing: border-box;
 }
 
 .header {
@@ -30,14 +17,14 @@ html, body {
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  background-color: green;
-  color: yellowgreen;
+  background-color: var(--headerBgColour);
+  color: var(--headerFontColour);
   height: 50px;
   padding: 1rem .5rem;
   position: relative;
 }
 
-.menu {
+.nav {
   display: none;
   flex-direction: column;
   list-style-type: none;
@@ -46,42 +33,33 @@ html, body {
   position: absolute;
   top: 50px;
   left: 0;
-  background: blueviolet;
+  background: var(--navBgColour);
   width: 100%;
   gap: 0;
   justify-content: center;
   align-items: center;
 }
 
-.menu.open {
+.nav.open {
   display: flex;
 }
 
-.menu > li {
-  display: flex;
-  border-bottom: 1px solid yellowgreen;
+.nav > a {
   width: 100%;
-  align-items: center;
-  justify-content: center;
-  gap: 0;
   height: 50px;
-}
-
-.menu > li > a {
-  width: 100%;
-  height: 100%;
-  text-align: center;
+  gap: 0;
   display: flex;
   justify-content: center;
   align-items: center;
   text-decoration: none;
-  color: yellowgreen;
+  color: var(--navFontColour);
+  border-bottom: 1px solid var(--navFontColour);
 }
 
-.menu > li a:hover,
-.menu > li a:active,
-.menu > li a.active {
-  background-color: #ab70e2;
+.nav > a:hover,
+.nav > a:active,
+.nav > a.active {
+  background-color: var(--navActiveBgColour);
 }
 
 .header > a.logo {
@@ -93,11 +71,11 @@ html, body {
 }
 
 @media (min-width: 700px) {
-  .menuButton {
+  .navButton {
     display: none;
   }
 
-  .menu {
+  .nav {
     display: flex;
     flex-direction: row;
     position: relative;
@@ -108,20 +86,17 @@ html, body {
     justify-content: flex-start;
   }
 
-  .menu > li {
+  .nav > a {
+    padding: 0 .5rem;
     border-bottom: none;
   }
 
-  .menu > li a {
-    padding: 0 .5rem;
-  }
-
-  .menu > li a:hover,
-  .menu > li a:active,
-  .menu > li a.active,
+  .nav > a:hover,
+  .nav > a:active,
+  .nav > a.active,
   .header > a.logo:hover,
   .header > a.logo:active,
   .header > a.logo.active {
-    background-color: #0a640a;
+    background-color: var(--navDesktopActiveBgColour);
   }
 }

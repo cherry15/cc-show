@@ -1,3 +1,6 @@
+@import './styles/variables.css';
+@import url(https://fonts.googleapis.com/css?family=Raleway);
+
 html {
   box-sizing: border-box;
   height: 100%;
@@ -7,4 +10,18 @@ html {
 *:before,
 *:after {
   box-sizing: inherit;
+}
+
+body {
+  font-family: var(--font);
+  color: var(--fontColor);
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-size: 1rem;
+}
+
+.responsive-image {
+  max-width: 100%;
+  height: auto;
 }

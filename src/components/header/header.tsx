@@ -3,21 +3,21 @@ import { NavLink } from 'react-router-dom'
 import './header.css'
 
 const Header = () => {
-  const openMenuLabel = 'Open menu'
-  const closeMenuLabel = 'Close menu'
-  const [ariaMenuLabel, setAriaMenuLabel] = useState(openMenuLabel)
+  const openNavLabel = 'Open menu'
+  const closeNavLabel = 'Close menu'
+  const [ariaNavLabel, setAriaNavLabel] = useState(openNavLabel)
 
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [isNavOpen, setIsNavOpen] = useState(false)
 
-  const toggleMenu = () => {
-    isMenuOpen ? setIsMenuOpen(false) : setIsMenuOpen(true)
-    isMenuOpen
-      ? setAriaMenuLabel(closeMenuLabel)
-      : setAriaMenuLabel(openMenuLabel)
+  const toggleNav = () => {
+    isNavOpen ? setIsNavOpen(false) : setIsNavOpen(true)
+    isNavOpen
+      ? setAriaNavLabel(openNavLabel)
+      : setAriaNavLabel(closeNavLabel)
   }
 
-  const hideMenu = () => {
-    setIsMenuOpen(false)
+  const hideNav = () => {
+    setIsNavOpen(false)
   }
 
   return (
@@ -29,48 +29,40 @@ const Header = () => {
       />
       <input
         type='button'
-        className={`menuButton ${isMenuOpen ? 'open' : ''}`}
-        aria-label={ariaMenuLabel}
-        onClick={toggleMenu}
+        className={`navButton ${isNavOpen ? 'open' : ''}`}
+        aria-label={ariaNavLabel}
+        onClick={toggleNav}
       />
-      <ul className={`menu ${isMenuOpen ? 'open' : ''}`}>
-        <li>
+      <nav className={`nav ${isNavOpen ? 'open' : ''}`}>
           <NavLink
             to={'/about'}
             className={({ isActive }) => (isActive ? 'active' : '')}
-            onClick={hideMenu}
+            onClick={hideNav}
           >
             About
           </NavLink>
-        </li>
-        <li>
           <NavLink
             to={'/cats'}
             className={({ isActive }) => (isActive ? 'active' : '')}
-            onClick={hideMenu}
+            onClick={hideNav}
           >
             Cats
           </NavLink>
-        </li>
-        <li>
           <NavLink
             to={'/dogs'}
             className={({ isActive }) => (isActive ? 'active' : '')}
-            onClick={hideMenu}
+            onClick={hideNav}
           >
             Dogs
           </NavLink>
-        </li>
-        <li>
           <NavLink
             to={'/contact'}
             className={({ isActive }) => (isActive ? 'active' : '')}
-            onClick={hideMenu}
+            onClick={hideNav}
           >
             Contact
           </NavLink>
-        </li>
-      </ul>
+      </nav>
     </header>
   )
 }
