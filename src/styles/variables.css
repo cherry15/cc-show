@@ -6,17 +6,24 @@
   --headerBgColour: green;
   --headerFontColour: yellowgreen;
 
-  --footerBgColour: #00b9ff;
+  --footerBgColour: blueviolet;
   --footerFontColour: white;
 
   --navBgColour: blueviolet;
   --navFontColour: yellowgreen;
   --navActiveBgColour: #ab70e2;
   --navDesktopActiveBgColour: #0a640a;
- 
-  --lightGrey: #e1e5ea;
-  --grey: #dddddd;
+
+  --buttonBgColour: blueviolet;
+  --buttonFontColour: white;
+  --buttonActiveBgColour: #ab70e2;
+  --buttonCancelBgColour: #711c24;
+  --buttonGoBgColour: blueviolet;
 
   --errorBgColor: #f8d7da;
   --errorFontColor: #711c24;
+
+  --white: white;
+  --lightGrey: #e1e5ea;
+  --grey: #dddddd;
 }

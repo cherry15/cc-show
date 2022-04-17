@@ -1,0 +1,65 @@
+@import '../../styles/variables.css';
+
+.mainFeatureContainer {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  gap: 1rem 0;
+}
+
+.mainFeature {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.mainInfo {
+  background-color: transparent;
+  max-width: none;
+  position: relative;
+  bottom: revert;
+  left: revert;
+  padding: 0;
+}
+
+.title {
+  margin-top: revert;
+}
+
+.mainAsideContainer {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 1rem 0;
+}
+
+.mainAside {
+  background-color: var(--lightGrey);
+  padding: .8rem 1rem;
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+}
+
+@media screen and (min-width: 800px) {
+  .mainFeatureContainer {
+    flex-direction: row;
+    gap: 0 1rem;
+  }
+
+  .mainInfo {
+    background-color: var(--white);
+    max-width: 460px;
+    position: absolute;
+    bottom: 2rem;
+    left: 2rem;
+    padding: .8rem 1rem;
+  }
+
+  .title {
+    margin-top: 0;
+  }
+}
+

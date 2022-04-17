@@ -1,0 +1,11 @@
+.countriesHome {
+  display: flex;
+  flex-direction: column;
+}
+
+.countriesHomeContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+

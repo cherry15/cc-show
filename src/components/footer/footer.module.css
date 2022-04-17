@@ -9,4 +9,5 @@ footer {
   padding: .8rem 1.4rem;
   color: var(--footerFontColour);
   justify-content: right;
+  margin-top: 1rem;
 }

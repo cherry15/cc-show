@@ -9,9 +9,9 @@
   color: var(--headerFontColour);
   height: 50px;
   padding: 1rem .5rem;
-  position: relative;
   width: 100%;
   position: sticky;
   z-index: 8;
   top: 0;
+  margin-bottom: 1rem;
 }

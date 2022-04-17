@@ -1,0 +1,32 @@
+.subFeatureContainer {
+  display: flex;
+  flex-direction: column;
+  max-width: 800px;
+  box-shadow: 0 .25rem .5rem 0 rgba(0,0,0,0.2);
+  padding: .5rem .75rem;
+  gap: 1rem 0;
+}
+
+.subFeatureHeader {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  align-items: center;
+}
+
+.summary {
+  margin-top: 0;
+}
+
+.thumbnail {
+  width: 100px;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+@media screen and (min-width: 667px) {
+  .thumbnail {
+    top: 1rem;
+  }
+}
