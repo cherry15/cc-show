@@ -19,6 +19,9 @@
   --buttonActiveBgColour: #ab70e2;
   --buttonCancelBgColour: #711c24;
   --buttonGoBgColour: blueviolet;
+  --buttonDisabledBgColour: #dddddd;
+
+  --loadingBgColour: orange;
 
   --errorBgColor: #f8d7da;
   --errorFontColor: #711c24;

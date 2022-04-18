@@ -2,4 +2,9 @@
   display: none;
 }
 
+.buttonContainer {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
 

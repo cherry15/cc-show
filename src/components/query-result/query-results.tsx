@@ -1,10 +1,12 @@
 import React from 'react'
-import { ICountry } from '../countries/countries-api'
+import { ICountry, PagedCountries } from '../countries/countries-api'
+import Loading from '../loading/loading'
 
 export interface IQueryResultsProps {
   isLoading: boolean
+  isFetching: boolean
   error: any
-  data: ICountry[]
+  data: PagedCountries<ICountry>
   children: React.ReactNode
 }
 
@@ -13,7 +15,7 @@ const QueryResults = ({ isLoading, error, data, children }: IQueryResultsProps) 
     return <p>{error.data.errorMessage}</p>
   }
   if (isLoading) {
-    return <div>Loading...</div>
+    return <Loading />
   }
   if (!data) {
     return <p>Nothing to show...</p>

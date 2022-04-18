@@ -55,6 +55,16 @@ export const CountriesData: ICountry[] = [
     summary: 'Vivamus eget bibendum massa. Praesent mi lectus, elementum nec lobortis vitae.'
   },
   {
+    id: 'germany',
+    name: 'Germany',
+    imageUrl: 'germany.jpg',
+    description: `Curabitur eu orci non nulla pharetra venenatis. Curabitur nec mollis eros, et fringilla turpis. 
+    Sed tincidunt elit sit amet nulla interdum feugiat. Donec non pretium felis, nec gravida diam. 
+    Suspendisse vel tincidunt elit. Proin eleifend, libero nec laoreet dapibus.`,
+    latLong: [1,1],
+    summary: 'Curabitur eu orci non nulla pharetra venenatis.'
+  },
+  {
     id: 'hungary',
     name: 'Hungary',
     imageUrl: 'hungary.jpg',
@@ -73,6 +83,17 @@ export const CountriesData: ICountry[] = [
     Sed tristique, purus eu fermentum viverra, odio felis.`,
     latLong: [1,1],
     summary: 'Nullam dictum orci vel malesuada consequat.'
+  },
+  {
+    id: 'japan',
+    name: 'Japan',
+    imageUrl: 'japan.jpg',
+    description: `Suspendisse potenti, ac porta massa lacinia in. 
+    Donec consequat libero turpis, ac porta massa lacinia in. Integer vitae iaculis massa. 
+    Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. 
+    Donec sagittis nisi quam, id efficitur nisl euismod ut`,
+    latLong: [1,1],
+    summary: 'Suspendisse potenti, ac porta massa lacinia in conubia.'
   },
   {
     id: 'new-zealand',

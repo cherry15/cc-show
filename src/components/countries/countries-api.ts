@@ -5,8 +5,18 @@ export interface ICountry {
   name: string
   imageUrl: string
   description: string
-  latLong?: number[]
   summary: string
+  latLong?: number[]
+  price?: number
+  rating?: number
+}
+
+export interface PagedCountries<T> {
+  page: number
+  numberPerPage: number
+  total: number
+  totalPages: number
+  data: T[]
 }
 
 export const baseUrl = '/api'
@@ -19,8 +29,8 @@ export const countriesApi = createApi({
   tagTypes: [countriesTag],
 
   endpoints: (builder) => ({
-    countries: builder.query<ICountry[], void>({
-      query: () => countriesUrl,
+    countries: builder.query<PagedCountries<ICountry>, number | void>({
+      query: (page = 1) => `${countriesUrl}?page=${page}`,
       providesTags: [countriesTag],
     }),
 

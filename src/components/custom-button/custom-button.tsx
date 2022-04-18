@@ -7,9 +7,10 @@ export interface IButtonProps {
   type?: string
   aria?: string
   value?: string
+  disabled?: boolean
 }
 
-const CustomButton = ({ onClick, buttonStyle = 'default', type = 'button', aria, value }: IButtonProps) => {
+const CustomButton = ({ onClick, buttonStyle = 'default', type = 'button', aria, value, disabled }: IButtonProps) => {
   return (
     <input
       type={type}
@@ -17,6 +18,7 @@ const CustomButton = ({ onClick, buttonStyle = 'default', type = 'button', aria,
       onClick={onClick}
       className={`button ${buttonStyle}`}
       aria-label={aria}
+      disabled={disabled}
     />
   )
 }

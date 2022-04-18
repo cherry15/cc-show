@@ -50,6 +50,14 @@
   background-color: var(--white);
 }
 
+.button:disabled,
+.button.default:disabled,
+.button.cancel:disabled,
+.button.go:disabled
+ {
+  background-color: var(--buttonDisabledBgColour);
+}
+
 @media screen and (min-width: 667px) {
   .button {
     width: 10rem;

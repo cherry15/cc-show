@@ -54,13 +54,6 @@ const Nav = () => {
           Admin
         </NavLink>
         <NavLink
-          to={'/dogs'}
-          className={({ isActive }) => (isActive ? 'active' : '')}
-          onClick={hideNav}
-        >
-          Dogs
-        </NavLink>
-        <NavLink
           to={'/contact'}
           className={({ isActive }) => (isActive ? 'active' : '')}
           onClick={hideNav}

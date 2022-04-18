@@ -1,5 +1,6 @@
 import React from 'react'
 import { ICountry } from '../countries/countries-api'
+import Loading from '../loading/loading'
 
 export interface IQueryResultProps {
   isLoading: boolean
@@ -13,7 +14,7 @@ const QueryResult = ({ isLoading, error, data, children }: IQueryResultProps) =>
     return <p>{error.data.errorMessage}</p>
   }
   if (isLoading) {
-    return <div>Loading...</div>
+    return <Loading />
   }
   if (!data) {
     return <p>Nothing to show...</p>

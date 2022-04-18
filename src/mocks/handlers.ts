@@ -5,13 +5,40 @@ import {
   countriesUrl,
 } from '../components/countries/countries-api'
 import { CountriesData } from './countries-data'
-import { v4 as uuidv4 } from 'uuid'
 
 const url = `${baseUrl}${countriesUrl}`
 
 export const handlers = [
+  // rest.get<ICountry[]>(url, (req, res, ctx) => {
+  //   return res(ctx.status(200), ctx.json(CountriesData))
+  // }),
+
   rest.get<ICountry[]>(url, (req, res, ctx) => {
-    return res(ctx.status(200), ctx.json(CountriesData))
+    const pageParam = req.url.searchParams.get('page')
+    const page = parseInt(pageParam) - 1
+    const numberPerPage = 5
+    const startOffset = page * numberPerPage
+    const endOffset = startOffset + numberPerPage
+    if (CountriesData.length > 0) {
+      const data: ICountry[] = CountriesData.slice(startOffset, endOffset)
+      return res(
+        ctx.status(200),
+        ctx.json({
+          page,
+          numberPerPage,
+          total: CountriesData.length,
+          totalPages: getTotalPages(CountriesData.length, numberPerPage),
+          data,
+        })
+      )
+    } else {
+      return res(
+        ctx.status(204),
+        ctx.json({
+          errorMessage: 'No Countries found',
+        })
+      )
+    }
   }),
 
   rest.get<ICountry>(`${url}/:id`, (req, res, ctx) => {
@@ -27,7 +54,7 @@ export const handlers = [
           ctx.status(404),
           ctx.json({
             errorMessage: 'Country not found',
-          }),
+          })
         )
       }
     }
@@ -35,14 +62,13 @@ export const handlers = [
       ctx.status(400),
       ctx.json({
         errorMessage: 'Something went wrong',
-      }),
+      })
     )
   }),
 
   rest.post<ICountry>(`${url}`, (req, res, ctx) => {
     if (req.body?.name) {
       const country: ICountry = {
-        id: uuidv4(),
         ...req.body,
       }
       CountriesData.push(country)
@@ -52,7 +78,7 @@ export const handlers = [
       ctx.status(400),
       ctx.json({
         errorMessage: 'Something went wrong',
-      }),
+      })
     )
   }),
 
@@ -70,7 +96,7 @@ export const handlers = [
           ctx.status(400),
           ctx.json({
             errorMessage: 'Country not found',
-          }),
+          })
         )
       }
     }
@@ -78,7 +104,7 @@ export const handlers = [
       ctx.status(400),
       ctx.json({
         errorMessage: 'Something went wrong',
-      }),
+      })
     )
   }),
 
@@ -96,7 +122,7 @@ export const handlers = [
           ctx.status(400),
           ctx.json({
             errorMessage: 'Country not found',
-          }),
+          })
         )
       }
     }
@@ -104,7 +130,7 @@ export const handlers = [
       ctx.status(400),
       ctx.json({
         errorMessage: 'Something went wrong',
-      }),
+      })
     )
   }),
 ]
@@ -112,5 +138,12 @@ export const handlers = [
 export const getCountriesException = rest.get<ICountry[]>(
   url,
   async (req, res, ctx) =>
-    res(ctx.status(500), ctx.json({ errorMessage: 'Deliberately broken request' }))
+    res(
+      ctx.status(500),
+      ctx.json({ errorMessage: 'Deliberately broken request' })
+    )
 )
+
+const getTotalPages = (listLength: number, numberPerPage: number): number => {
+  return Number.isInteger(listLength / numberPerPage) ? listLength / numberPerPage : Math.trunc(listLength / numberPerPage) + 1
+}
