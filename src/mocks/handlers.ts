@@ -9,14 +9,10 @@ import { CountriesData } from './countries-data'
 const url = `${baseUrl}${countriesUrl}`
 
 export const handlers = [
-  // rest.get<ICountry[]>(url, (req, res, ctx) => {
-  //   return res(ctx.status(200), ctx.json(CountriesData))
-  // }),
-
   rest.get<ICountry[]>(url, (req, res, ctx) => {
     const pageParam = req.url.searchParams.get('page')
     const page = parseInt(pageParam) - 1
-    const numberPerPage = 5
+    const numberPerPage = 8
     const startOffset = page * numberPerPage
     const endOffset = startOffset + numberPerPage
     if (CountriesData.length > 0) {
