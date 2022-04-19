@@ -1,8 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { NavLink } from 'react-router-dom'
-import { ICountry } from '../countries/countries-api'
+import { ICountry, useDeleteCountryMutation } from '../countries/countries-api'
 import CustomButton from '../custom-button/custom-button'
 import styles from './admin-list-item.module.css'
+import { Modal } from '../modal/modal'
+import { CountriesMessages } from '../countries/countries-messages'
 
 export interface IAdminListItemProps {
   country: ICountry
@@ -10,28 +12,49 @@ export interface IAdminListItemProps {
 
 const AdminListItem = ({ country }: IAdminListItemProps) => {
   const { name, summary, imageUrl, id } = country
+  const [showModal, setShowModal] = useState(false)
+  const [deleteCountry] = useDeleteCountryMutation()
 
-  const onOpenModal = (event: React.MouseEvent, country: ICountry): void => {
-    console.log('delete', country)
+  const openModal = (event: React.MouseEvent): void => {
+    event.preventDefault()
+    setShowModal(true)
+  }
+
+  const closeModal = (event: React.MouseEvent): void => {
+    event.preventDefault()
+    setShowModal(false)
+  }
+
+  const delCountry = async (event: React.MouseEvent<HTMLInputElement>): Promise<void> => {
+    event.preventDefault()
+    setShowModal(false)
+    await deleteCountry(id)
   }
 
   return (
+    <>
+    {showModal && <Modal modalTitle={CountriesMessages.delete} onCancel={closeModal} onOK={delCountry} >
+    {`${CountriesMessages.confirmDelete} ${name}?`}
+    </Modal>}
     <div className={styles.adminListItemContainer}>
-      <div className={styles.adminListItemHeader}>
-        <h3 className={styles.title}>{name}</h3>
-        <CustomButton type="button" buttonStyle="delete" aria="Delete country" onClick={(event) => onOpenModal(event, country)} />
-        <img
-          src={`/images/100/${imageUrl}`}
-          alt={name}
-          className={styles.thumbnail}
-        />
-      </div>
+      <h3 className={styles.title}>{name}</h3>
+      <CustomButton
+        type="button"
+        buttonStyle="delete"
+        aria="Delete country"
+        onClick={(event) => openModal(event)}
+      />
+      <img
+        src={`/images/100/${imageUrl}`}
+        alt={name}
+        className={styles.thumbnail}
+      />
       <p className={styles.summary}>{summary}</p>
-      <NavLink
-          to={`/countries/${id}`}
-          className={styles.link}
-        >More...</NavLink>
+      <NavLink to={`/countries/${id}`} className={styles.link}>
+        More...
+      </NavLink>
     </div>
+  </>
   )
 }
 

@@ -1,0 +1,75 @@
+@import '../../styles/variables.css';
+
+.modalWrapper {
+  background: var(--modalBgColour);
+  width: 90%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  height: 100%;
+  animation-duration: 500ms;
+  animation-name: slideIn;
+}
+
+.modalHeader,
+.modalBody,
+.modalFooter {
+	padding: 1rem;
+	margin: 0;
+}
+
+.modalFooter {
+  display: flex;
+  gap: 0.8rem;
+  justify-content: center;
+}
+
+.modalBody {
+  border-top: .1rem solid var(--lightestGrey);
+	border-bottom: .1rem solid var(--lightestGrey);
+	font-size: 1rem;
+}
+
+.modalBackDrop {
+  background: var(--modalBackDropBgColour);
+  height: 100%;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 9;
+  cursor: pointer;
+}
+
+@keyframes slideIn {
+  from {
+    margin-left: -100%;
+  }
+
+  to {
+    margin-left: 0%;
+  }
+}
+
+@keyframes slideDown {
+  from {
+    margin-top: -100%;
+  }
+
+  to {
+    margin-top: 0%;
+  }
+}
+
+@media screen and (min-width: 820px) {
+  .modalWrapper {
+		height: auto;
+    position: absolute;
+    left: calc(50% - 25rem);
+    top: auto;
+		width: 50rem;
+		animation-name: slideDown;
+	}
+}
+

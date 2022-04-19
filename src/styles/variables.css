@@ -26,8 +26,15 @@
   --errorBgColor: #f8d7da;
   --errorFontColor: #711c24;
 
+  --modalBgColour: white;
+  --modalBackDropBgColour: rgba(63, 61, 61, 0.692);
+
+  --dropShadow: 0 .25rem .5rem 0 rgba(0,0,0,0.2);
+
   --white: white;
   --transparentWhite: #ffffffc4;
-  --lightGrey: #e1e5ea;
+
   --grey: #dddddd;
+  --lightGrey: #e1e5ea;
+  --lightestGrey: #eee;
 }
