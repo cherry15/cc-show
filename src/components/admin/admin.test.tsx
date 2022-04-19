@@ -6,6 +6,9 @@ import AdminHome from '../../pages/admin-home'
 import CountryDetail from '../countries/country-detail'
 import { ICountry } from '../countries/countries-api'
 import { BrowserRouter } from 'react-router-dom'
+import App from '../../App'
+import Header from '../header/header'
+import AddCountryForm from './add-country-form'
 
 afterAll(() => {
   jest.clearAllMocks()
@@ -87,6 +90,20 @@ describe('Delete country', () => {
     await waitForElementToBeRemoved(() => screen.queryByRole('heading', { name: /angola/i }))
 
     expect(screen.queryByText(/angola/i)).toBeNull()
+  })
+})
+
+describe('Add country', () => {
+  test('clicking on the Add country link navigates to the add country page', async () => {
+    renderWithProviders(<BrowserRouter><AdminHome /><AddCountryForm /></BrowserRouter>)
+
+    await screen.findByRole('heading', { name: /brazil/i })
+
+    fireEvent.click(
+      screen.getByRole('link', { name: /add country/i })
+    )
+
+    expect(screen.getByLabelText('Name')).toBeInTheDocument()
   })
 })
 

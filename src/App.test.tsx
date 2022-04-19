@@ -38,5 +38,12 @@ describe('App navigation', () => {
     fireEvent.click(link)
     await screen.findByRole('heading', { name: /brazil/i })
   })
+
+  
+  it('clicking on the admin link should go to the admin page', async () => {
+    const link = screen.getByRole('link', { name: "Admin" })
+    fireEvent.click(link)
+    await screen.findByRole('heading', { name: /brazil/i })
+  })
 })
 
