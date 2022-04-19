@@ -32,12 +32,6 @@ describe('CountryDetail', () => {
     await screen.findByRole('heading', { name: /angola/i })
     expect(screen.getByText(/angola/)).toBeDefined()
   })
-
-  // test('returns an error when the country does not exist', async () => {
-  //   country.name = 'bad-name'
-  //   renderWithProviders(<BrowserRouter><CountryDetail country={country} /></BrowserRouter>)
-  //   await screen.findByText('Sorry, country not found')
-  // })
 })
 
 describe('Delete country modal', () => {
