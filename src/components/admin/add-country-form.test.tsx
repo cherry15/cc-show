@@ -36,7 +36,7 @@ describe('Adding a country, happy path', () => {
   })
 })
 
-describe('Adding a country, unhappy path no name', () => {
+describe('Adding a country, unhappy paths', () => {
   test('clicking on the Add country button does not add the country when there is no name', async () => {
     const testDescription = 'test description'
     const testSummary = 'test summary'
