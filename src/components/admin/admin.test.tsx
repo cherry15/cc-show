@@ -6,8 +6,6 @@ import AdminHome from '../../pages/admin-home'
 import CountryDetail from '../countries/country-detail'
 import { ICountry } from '../countries/countries-api'
 import { BrowserRouter } from 'react-router-dom'
-import App from '../../App'
-import Header from '../header/header'
 import AddCountryForm from './add-country-form'
 
 afterAll(() => {

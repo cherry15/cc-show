@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styles from './add-country-form.module.css'
 import {
   useAddCountryMutation,
@@ -6,11 +6,11 @@ import {
   createCountryId,
 } from '../countries/countries-api'
 import { useForm, SubmitHandler } from 'react-hook-form'
-import { CountriesMessages } from '../countries/countries-messages'
 import CustomButton from '../custom-button/custom-button'
 
 export const AddCountryForm = () => {
   const [addCountry] = useAddCountryMutation()
+  const [showSuccessMessage, setShowSuccessMessage] = useState(false)
 
   const {
     register,
@@ -31,10 +31,12 @@ export const AddCountryForm = () => {
 
   const addCountryToStore = async (country: ICountry) => {
     await addCountry(country)
+    setShowSuccessMessage(true)
   }
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className={styles.countryForm}>
+      { showSuccessMessage && <p className='success'>Success, the country has been added!</p>}
       <label className="label" htmlFor="name">
         Name
       </label>
@@ -45,7 +47,7 @@ export const AddCountryForm = () => {
         {...register('name', {
           required: true,
           maxLength: 20,
-          pattern: /^[A-Za-z]+$/i,
+          pattern: /^[a-zA-Z\s]*$/
         })}
       />
       {errors.name && <span className="error">Name is required</span>}

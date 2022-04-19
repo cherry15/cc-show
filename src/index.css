@@ -47,7 +47,7 @@ body {
 }
 
 .input:focus,
-.textarea {
+.textarea:focus {
   outline: .1rem var(--inputFocusBorderColour) solid;
 }
 
@@ -59,6 +59,14 @@ body {
   display: block;
   background: var(--errorBgColor);
   color: var(--errorFontColor);
+  padding: .8rem 1.4rem;
+  margin: .8rem 0;
+}
+
+.success {
+  display: block;
+  background: var(--successBgColor);
+  color: var(--successFontColor);
   padding: .8rem 1.4rem;
   margin: .8rem 0;
 }

@@ -26,6 +26,9 @@
   --errorBgColor: #f8d7da;
   --errorFontColor: #711c24;
 
+  --successBgColor: rgb(236, 224, 200);
+  --successFontColor: rgb(146, 98, 10);
+
   --modalBgColour: white;
   --modalBackDropBgColour: rgba(63, 61, 61, 0.692);
 
