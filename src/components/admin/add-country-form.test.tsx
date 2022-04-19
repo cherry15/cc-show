@@ -1,6 +1,5 @@
 import { fireEvent, screen, waitFor } from '@testing-library/react'
 import { renderWithProviders } from '../../test/test-utils'
-import { ICountry } from '../countries/countries-api'
 import AddCountryForm from './add-country-form'
 
 afterAll(() => {
