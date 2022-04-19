@@ -50,7 +50,7 @@ export const AddCountryForm = () => {
           pattern: /^[a-zA-Z\s]*$/
         })}
       />
-      {errors.name && <span className="error">Name is required</span>}
+      {errors.name && <span className="error">Name is required and must contain only letters and spaces</span>}
       <label className="label" htmlFor="summary">
         Summary
       </label>
@@ -59,8 +59,8 @@ export const AddCountryForm = () => {
         id="summary"
         {...register('summary', { required: true, maxLength: 100 })}
       />
-      {errors.description && (
-        <span className="error">Description is required</span>
+      {errors.summary && (
+        <span className="error">Summary is required</span>
       )}
       <label className="label" htmlFor="description">
         Description
