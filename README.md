@@ -12,9 +12,9 @@ I've also tried to be mindful of Kent C Dodds Testing Trophy approach [Write tes
 
 I have discovered some limitations of CSS Modules with a dynamic active class so have reverted some of the CSS to regular CSS, there's probably a solution to this but I don't know it yet. Normally I would use SCSS for CSS but the create react app doesn't recommend this approach. 
 
-I've put the images into the public folder, something I wouldn't normally do as it would badly affect performance. The reason they are there is because I don't know how to import dynamic images yet. I've mocked the data /src/mocks/countries-data.ts and the http requests /src/mocks/handlers.ts, this is a guess as to what the backend would return and in orde for it to be more realistic I would have a conversation with one of the backenders to get the correct error response codes and format of the data.
+I've put the images into the public folder, something I wouldn't normally do as it would badly affect performance. The reason they are there is because I don't know how to import dynamic images yet. I've mocked the data /src/mocks/countries-data.ts and the http requests /src/mocks/handlers.ts, this is a guess as to what the backend would return and in order for it to be more realistic I would have a conversation with one of the backenders to get the correct error response codes and format of the data.
 
-There is still a lot to do, breaking components into smaller components, removing duplication and a lot more tests to write. I am proud of some parts of the code whereas other parts could do with a litle TLC...
+There is still a lot to do, breaking components into smaller components, removing duplication and a lot more tests to write. I am proud of some parts of the code whereas other parts could do with a little TLC...
 
 ## Running the App
 
