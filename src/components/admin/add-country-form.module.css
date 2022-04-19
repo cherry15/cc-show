@@ -1,0 +1,12 @@
+@import '../../styles/variables.css';
+
+.countryForm {
+  width: 100%;
+  background-color: var(--white);
+}
+
+.buttonContainer {
+  margin-top: .5rem;
+}
+
+

@@ -33,3 +33,52 @@ body {
   width: 100%;
   height: auto;
 }
+
+.input,
+.textarea {
+  border: none;
+  background: var(--lightGrey);
+  padding: 1rem 0.5rem;
+  border-radius: .3rem;
+  width: 100%;
+  font-family: var(--font);
+  font-size: .8rem;
+  margin-bottom: .4rem;
+}
+
+.input:focus,
+.textarea {
+  outline: .1rem var(--inputFocusBorderColour) solid;
+}
+
+.label {
+  display: block;
+}
+
+.error {
+  display: block;
+  background: var(--errorBgColor);
+  color: var(--errorFontColor);
+  padding: .8rem 1.4rem;
+  margin: .8rem 0;
+}
+
+.button-link {
+  background-color: var(--buttonBgColour);
+  border: none;
+  color: var(--buttonFontColour);
+  padding: .8rem 1rem;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+  margin: 0;
+  width: auto;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.button-link:hover {
+  background-color: var(--buttonActiveBgColour);
+}
+

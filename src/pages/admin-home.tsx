@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { NavLink } from 'react-router-dom'
 import AdminListItem from '../components/admin/admin-list-item'
 import {
   ICountry,
@@ -30,11 +31,16 @@ const AdminHome = () => {
   }
 
   if (!countries?.data) {
-    return <h2> Sorry there are no countries to display :(</h2>
+    return <p>Sorry there are no countries to display</p>
   }
 
   return (
-    <div>
+    <>
+      <div className={styles.buttonLinkContainer}>
+        <NavLink to={`/admin/add`} className={`button-link ${styles.link}`}>
+          Add Country
+        </NavLink>
+      </div>
       <div className={listStyles.container}>
         {countries?.data.map((country: ICountry) => {
           return (
@@ -58,7 +64,7 @@ const AdminHome = () => {
           disabled={page >= countries.totalPages}
         />
       </div>
-    </div>
+    </>
   )
 }
 

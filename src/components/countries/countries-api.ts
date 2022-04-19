@@ -19,6 +19,10 @@ export interface PagedCountries<T> {
   data: T[]
 }
 
+export const createCountryId = (name: string): string => {
+  return name.toLocaleLowerCase().replaceAll(' ', '-')
+}
+
 export const baseUrl = '/api'
 export const countriesUrl = '/countries'
 const countriesTag = 'Countries'

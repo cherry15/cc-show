@@ -29,6 +29,8 @@
   --modalBgColour: white;
   --modalBackDropBgColour: rgba(63, 61, 61, 0.692);
 
+  --inputFocusBorderColour: #ab70e2;
+
   --dropShadow: 0 .25rem .5rem 0 rgba(0,0,0,0.2);
 
   --white: white;

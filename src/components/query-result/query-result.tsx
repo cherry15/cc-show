@@ -17,7 +17,7 @@ const QueryResult = ({ isLoading, error, data, children }: IQueryResultProps) =>
     return <Loading />
   }
   if (!data) {
-    return <p>Nothing to show...</p>
+    return <p>Sorry, country not found</p>
   }
   if (data) {
     return <>{children}</>

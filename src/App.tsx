@@ -11,6 +11,7 @@ const Contact = React.lazy(() => import('./pages/contact'))
 const Country = React.lazy(() => import('./pages/country'))
 const CountriesHome = React.lazy(() => import('./pages/countries-home'))
 const AdminHome = React.lazy(() => import('./pages/admin-home'))
+const AddCountry = React.lazy(() => import('./pages/add-country'))
 
 const App = () => {
   return (
@@ -57,6 +58,14 @@ const App = () => {
             element={
               <React.Suspense fallback={<Loading />}>
                 <Country />
+              </React.Suspense>
+            }
+          />
+          <Route
+            path="add"
+            element={
+              <React.Suspense fallback={<Loading />}>
+                <AddCountry />
               </React.Suspense>
             }
           />

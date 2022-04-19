@@ -1,18 +1,14 @@
 import React from 'react'
 import { fireEvent, screen } from '@testing-library/react'
 import App from './App'
-import { renderWithRouter } from './test/test-utils'
+import { renderWithProviders } from './test/test-utils'
 import Header from './components/header/header'
+import { BrowserRouter } from 'react-router-dom'
 
 describe('App navigation', () => {
 
   beforeEach(() => {
-    renderWithRouter(
-      <>
-       <Header />
-        <App />
-      </>
-    )
+    renderWithProviders(<BrowserRouter><Header /><App /></BrowserRouter>)
   })
 
   it('should default to the home page', async () => {
@@ -35,6 +31,12 @@ describe('App navigation', () => {
     const link = screen.getByRole('link', { name: "Home" })
     fireEvent.click(link)
     await screen.findByRole('heading', { name: /home/i })
+  })
+
+  it('clicking on the countries link should go to the countries page', async () => {
+    const link = screen.getByRole('link', { name: "Countries" })
+    fireEvent.click(link)
+    await screen.findByRole('heading', { name: /brazil/i })
   })
 })
 
